@@ -9,3 +9,12 @@
 #
 # 2 2
 #     4
+
+def sum_of_numbers(num_1, num_2):
+    if num_1 == 0:
+        return num_2
+    else:
+        return sum_of_numbers(num_1 - 1, num_2 + 1)
+num_1 = int(input('Вводим первое число: '))
+num_2 = int(input("Вводим второе число"))
+print(sum_of_numbers(num_1, num_2))
