@@ -8,24 +8,15 @@
 # если с ритмом все не в порядке
 
 
-# def rifma(words):
-#     words = words.lower().split()
-#     return sum(1 for i in words if i in 'аеёиоуыэюя')
-# tranquility = input('Введите стихотворение: ')
-# print(rifma(tranquility))
 def rifma(word):
-    strk = word.split()
-    list_1 = []
-    for word in strk:
-        sum_w = 0
-        for i in word:
-            if i in 'аеёиоуыэюя':
-                sum_w += 1
-        list_1.append(sum_w)
-    return len(list_1) == list_1.count(list_1[0])
-str_1 = input('Введите стихотворение: ')
-if rifma(str_1):
+    my_list = ['а', 'и', 'е', 'ё', 'о', 'у', 'ы', 'э', 'ю', 'я']
+    count = 0
+    for i in word:
+        if i in my_list: count += 1
+    return count
+chant = input('Введите стихотворение: ')
+chant = chant.split()
+if len(set(map(rifma, chant))) == 1:
     print('Парам пам-пам')
 else:
     print('Пам парам')
-
