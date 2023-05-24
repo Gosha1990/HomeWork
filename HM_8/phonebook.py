@@ -14,7 +14,7 @@
 # data.close()
 
 def open_file_read(path):
-    '''Функуия считыает данные из файла тхт'''
+    '''Функуия считыает данные из файла тхт показывает пользователю'''
     with open(path,'r') as file:
         main_list=(file.readlines())
         main_list_str=[x.rstrip().split(':') for x in main_list]
@@ -31,3 +31,29 @@ def look_list (list_for_look):
     print([' '.join(x) for x in list_for_look], end='\n')
 
 # look_list(list_for_look)
+
+
+def interaction():
+    '''Выбор действия пользователя'''
+    action = int(input('Введите команду: \n1 - Сделать запись\n2 - Получить контакт\n - Удалить запись'))
+    if action == 1:
+        contact = input('Вводите ФИО и номер через пробел: ')
+        return (contact, action)
+    if action == 2:
+        contact = input('Вводим имя контакта: ')
+        return (contact, action)
+    if action == 3:
+        contact = input('Вводим контакт для удаления: ')
+        return (contact, action)
+
+
+
+# print(interaction(open_file_read('contact.txt')))
+
+
+
+
+
+
+
+
